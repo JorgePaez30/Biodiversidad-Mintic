@@ -60,7 +60,7 @@ colores = plt.cm.tab20.colors
 ax.bar3d(x_pos, y_pos, z_pos, dx, dy, dz, color=colores[:len(lista_tipo)])
 
 # Añadir títulos y etiquetas
-ax.set_title('Cantidad de Especies por Tipo en Boyacá')
+ax.set_title('Cantidad de Especies por Tipo en cundinamarca')
 ax.set_xlabel('Tipo de Especie')
 ax.set_ylabel('Categoría')
 ax.set_zlabel('Cantidad')
@@ -69,7 +69,7 @@ ax.set_zlabel('Cantidad')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(lista_tipo, rotation=45, ha='right')
 
-fig.savefig('Cantidad_especies_Cundinamarca_3D.png')
+fig.savefig('Cantidad_especies_cundinamarca_3D.png')
 plt.show()
 
 #----------------------------Sección Boyaca---------------------------------------------------#
