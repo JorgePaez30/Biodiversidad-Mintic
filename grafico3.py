@@ -69,7 +69,7 @@ ax.set_zlabel('Cantidad')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(lista_tipo, rotation=45, ha='right')
 
-fig.savefig('Cantidad_especies_cundinamarca_3D.png')
+fig.savefig('Cantidad_Especies_Cundinamarca_3D.png')
 plt.show()
 
 #----------------------------Sección Boyaca---------------------------------------------------#
