@@ -28,8 +28,16 @@ for elemento in lista_tipo:
   cantidad=contar(elemento,lista_tipo_especie)
   lista_valores.append(cantidad)
 #Diagrama de barras
-fig, diagx = plt.subplots()
-diagx.bar(lista_tipo,lista_valores)
+colores = plt.cm.tab20.colors
+fig, diagx = plt.subplots(figsize=(10, 6))
+barras = diagx.bar(lista_tipo, lista_valores, color=colores[:len(lista_tipo)])
+diagx.set_title('Cantidad de Especies por Tipo en Cundinamarca')
+diagx.set_xlabel('Tipo de Especie')
+diagx.set_ylabel('Cantidad')
+# Añadir etiquetas a las barras
+for barra in barras:
+    yval = barra.get_height()
+    diagx.text(barra.get_x() + barra.get_width() / 2, yval, int(yval), ha='center', va='bottom')  
 fig.savefig('Cantidad_especies_cundinamarca.png')
 plt.show()
 
@@ -43,18 +51,29 @@ def contar(nombre, vec):
     if i==nombre:
       contador+=1
   return contador
+
 #etiquetas únicas en tipo
 lista_tipo = df_boyaca['Tipo'].unique()
 lista_habitat = df_boyaca['Habitat'].unique()
 lista_tipo_especie = list(df_boyaca['Tipo'])
 lista_tipo_habitat = list(df_boyaca['Habitat'])
+
 #Armar otra lista con el conteo
 lista_valores=[]
 for elemento in lista_tipo:
   cantidad=contar(elemento,lista_tipo_especie)
   lista_valores.append(cantidad)
+
 #Diagrama de barras
-fig, diagx = plt.subplots()
-diagx.bar(lista_tipo,lista_valores)
+colores = plt.cm.tab20.colors
+fig, diagx = plt.subplots(figsize=(10, 6))
+barras = diagx.bar(lista_tipo, lista_valores, color=colores[:len(lista_tipo)])
+diagx.set_title('Cantidad de Especies por Tipo en Boyacá')
+diagx.set_xlabel('Tipo de Especie')
+diagx.set_ylabel('Cantidad')
+# Añadir etiquetas a las barras
+for barra in barras:
+    yval = barra.get_height()
+    diagx.text(barra.get_x() + barra.get_width() / 2, yval, int(yval), ha='center', va='bottom')   
 fig.savefig('Cantidad_especies_boyaca.png')
 plt.show()
